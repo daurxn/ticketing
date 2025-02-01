@@ -1,0 +1,19 @@
+{
+  "name": "nats-test",
+  "module": "src",
+  "type": "module",
+  "scripts": {
+    "publish": "bun --watch  src/publisher.ts",
+    "listen": "bun --watch src/listener.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.4.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "node-nats-streaming": "^0.3.2"
+  }
+}
