@@ -44,7 +44,7 @@ it('returns a 400 when purchasing a cancelled order', async () => {
     userId,
     version: 0,
     price: 20,
-    status: OrderStatus.Canceled,
+    status: OrderStatus.Cancelled,
   })
   await order.save()
 
@@ -91,6 +91,6 @@ it('returns a 201 with valid inputs', async () => {
     orderId: order.id,
     stripeId: stripeCharge!.id,
   })
-  
+
   expect(payment).not.toBeNull()
 })
