@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "test": "jest --watchAll --no-cache"
+    "test": "jest --no-cache"
   },
   "jest": {
     "preset": "ts-jest",
