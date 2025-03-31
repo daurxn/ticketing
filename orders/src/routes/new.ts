@@ -26,7 +26,7 @@ router.post('/api/orders', requireAuth, [
     .custom((input: string) => mongoose.Types.ObjectId.isValid(input))
     .withMessage('ticketId must be provided')
 ], validateRequest, async (req: Request, res: Response) => {
-  const { ticketId } = req.body
+  const ticketId = mongoose.Types.ObjectId.createFromHexString(req.body.ticketId)
   
   // Find the ticket the user is trying to order in the database
   const ticket = await Ticket.findById(ticketId)
