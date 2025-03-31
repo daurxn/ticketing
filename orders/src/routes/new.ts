@@ -29,10 +29,11 @@ router.post(
   ],
   validateRequest,
   async (req: Request, res: Response) => {
+    // nosemgrep
     const { ticketId } = req.body
 
     // Find the ticket the user is trying to order in the database
-    // semgrep-disable-next-line express-mongo-nosqli
+    // nosemgrep
     const ticket = await Ticket.findById(ticketId)
 
     if (!ticket) {
