@@ -1,0 +1,13 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "express-mongo-sanitize": "^2.2.0",
+      },
+    },
+  },
+  "packages": {
+    "express-mongo-sanitize": ["express-mongo-sanitize@2.2.0", "", {}, "sha512-PZBs5nwhD6ek9ZuP+W2xmpvcrHwXZxD5GdieX2dsjPbAbH4azOkrHbycBud2QRU+YQF1CT+pki/lZGedHgo/dQ=="],
+  }
+}
