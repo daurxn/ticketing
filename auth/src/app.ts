@@ -10,7 +10,6 @@ import { signinRouter } from './routes/signin'
 import { signoutRouter } from './routes/signout'
 import { signupRouter } from './routes/signup'
 
-// halo
 const app = express()
 app.set('trust proxy', true)
 
