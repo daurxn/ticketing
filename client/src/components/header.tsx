@@ -5,25 +5,25 @@ interface HeaderProps {
   currentUser: null | User
 }
 
-export default ({ currentUser }: HeaderProps) => {
-  const links = [
-    !currentUser && { label: 'Sign Up', href: '/auth/signup' },
-    !currentUser && { label: 'Sign In', href: '/auth/signin' },
-    currentUser && { label: 'Sell Tickets', href: '/tickets/new' },
-    currentUser && { label: 'My Orders', href: '/orders' },
-    currentUser && { label: 'Sign Out', href: '/auth/signout' },
-  ]
-    .filter((linkConfig) => linkConfig)
-    // @ts-ignore
-    .map(({ label, href }) => {
-      return (
-        <li key={href} className="nav-item">
-          <Link href={href} className="nav-link">
-            {label}
-          </Link>
-        </li>
-      )
-    })
+const Header = ({ currentUser }: HeaderProps) => {
+  const links = (
+    currentUser
+      ? [
+          { label: 'Sell Tickets', href: '/tickets/new' },
+          { label: 'My Orders', href: '/orders' },
+          { label: 'Sign Out', href: '/auth/signout' },
+        ]
+      : [
+          { label: 'Sign Up', href: '/auth/signup' },
+          { label: 'Sign In', href: '/auth/signin' },
+        ]
+  ).map(({ label, href }) => (
+    <li key={href} className="nav-item">
+      <Link href={href} className="nav-link">
+        {label}
+      </Link>
+    </li>
+  ))
 
   return (
     <nav className="navbar navbar-light bg-light">
@@ -37,3 +37,5 @@ export default ({ currentUser }: HeaderProps) => {
     </nav>
   )
 }
+
+export default Header
