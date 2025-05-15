@@ -9,7 +9,6 @@ import { indexOrderRouter } from './routes'
 import { showOrderRouter } from './routes/show'
 import { deleteOrderRouter } from './routes/delete'
 
-// test
 const app = express()
 app.set('trust proxy', true)
 
