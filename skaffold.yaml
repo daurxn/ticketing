@@ -4,11 +4,10 @@ deploy:
   kubectl:
     manifests:
       - infra/k8s/*
+      - infra/k8s-dev/*
 build:
   local:
     push: false
-  #  googleCloudBuild:
-  #    projectId: ticketing-dev-446711
   artifacts:
     - image: daurxn/auth
       context: auth
