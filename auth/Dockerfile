@@ -1,14 +1,13 @@
-FROM node:lts-alpine
+FROM oven/bun:canary-alpine
 
 WORKDIR /app
-
-COPY package.json ./
-
-RUN npm install --only=production
-
+COPY package.json .
+RUN bun install --only=prod
 COPY . .
+
+RUN mkdir -p /app/.next && chmod -R 777 /app
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
-CMD ["npm", "run", "dev"]
+CMD ["bun", "dev"]
