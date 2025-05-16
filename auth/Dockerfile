@@ -5,7 +5,8 @@ COPY package.json .
 RUN bun install --only=prod
 COPY . .
 
-# Create a non-root user and switch
+RUN mkdir -p /app/.next && chmod -R 777 /app
+
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
