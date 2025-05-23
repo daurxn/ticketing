@@ -7,6 +7,8 @@ interface LandingPageProps {
   tickets: Ticket[]
 }
 
+// test
+
 const LandingPage = ({ tickets }: LandingPageProps) => {
   const ticketList = tickets.map((ticket) => {
     return (
